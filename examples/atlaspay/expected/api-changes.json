@@ -1,0 +1,173 @@
+[
+  {
+    "id": "CHANGE-145CBCB1A6BA",
+    "category": "operation_removed",
+    "severity": "high",
+    "breaking": true,
+    "path": "/customers/create",
+    "method": "post",
+    "location": "operation",
+    "old_value": {"path": "/customers/create", "method": "post"},
+    "new_value": null,
+    "description": "POST /customers/create is no longer present in the revised API.",
+    "evidence": [
+      {
+        "old_document_pointer": "#/paths/~1customers~1create/post",
+        "new_document_pointer": null,
+        "summary": "Operation exists in the baseline document and is absent from the revision."
+      }
+    ]
+  },
+  {
+    "id": "CHANGE-0098C9B967F0",
+    "category": "operation_added",
+    "severity": "info",
+    "breaking": false,
+    "path": "/customers",
+    "method": "post",
+    "location": "operation",
+    "old_value": null,
+    "new_value": {"path": "/customers", "method": "post"},
+    "description": "POST /customers is newly present in the revised API.",
+    "evidence": [
+      {
+        "old_document_pointer": null,
+        "new_document_pointer": "#/paths/~1customers/post",
+        "summary": "Operation is absent from the baseline document and exists in the revision."
+      }
+    ]
+  },
+  {
+    "id": "CHANGE-E57D5721FF94",
+    "category": "request_property_renamed",
+    "severity": "high",
+    "breaking": true,
+    "path": "/customers",
+    "method": "post",
+    "location": "request.body",
+    "old_value": {"name": "customer_name", "required": true, "type": "string"},
+    "new_value": {"name": "full_name", "required": true, "type": "string"},
+    "description": "Request property 'customer_name' is a deterministic rename candidate for 'full_name' on POST /customers.",
+    "evidence": [
+      {
+        "old_document_pointer": "#/paths/~1customers~1create/post/requestBody",
+        "new_document_pointer": "#/paths/~1customers/post/requestBody",
+        "summary": "The removed and added properties are a mutually unique structural match."
+      }
+    ]
+  },
+  {
+    "id": "CHANGE-4B2C54D479A4",
+    "category": "request_property_added_required",
+    "severity": "high",
+    "breaking": true,
+    "path": "/customers",
+    "method": "post",
+    "location": "request.body",
+    "old_value": null,
+    "new_value": {"name": "currency", "required": true, "type": "string"},
+    "description": "Request property 'currency' became required for POST /customers.",
+    "evidence": [
+      {
+        "old_document_pointer": "#/paths/~1customers~1create/post/requestBody",
+        "new_document_pointer": "#/paths/~1customers/post/requestBody",
+        "summary": "The property is newly required in the revision request schema."
+      }
+    ]
+  },
+  {
+    "id": "CHANGE-DBFD5EAA004A",
+    "category": "response_required_property_removed",
+    "severity": "high",
+    "breaking": true,
+    "path": "/customers",
+    "method": "post",
+    "location": "response.201",
+    "old_value": {"name": "customer_id", "required": true, "type": "string"},
+    "new_value": null,
+    "description": "Response property 'customer_id' is no longer guaranteed for status '201' on POST /customers.",
+    "evidence": [
+      {
+        "old_document_pointer": "#/paths/~1customers~1create/post/responses/201",
+        "new_document_pointer": "#/paths/~1customers/post/responses/201",
+        "summary": "A baseline required property is absent or optional in the revision schema."
+      }
+    ]
+  },
+  {
+    "id": "CHANGE-BD43CDEDDD34",
+    "category": "response_required_property_removed",
+    "severity": "high",
+    "breaking": true,
+    "path": "/customers",
+    "method": "post",
+    "location": "response.201",
+    "old_value": {"name": "customer_name", "required": true, "type": "string"},
+    "new_value": null,
+    "description": "Response property 'customer_name' is no longer guaranteed for status '201' on POST /customers.",
+    "evidence": [
+      {
+        "old_document_pointer": "#/paths/~1customers~1create/post/responses/201",
+        "new_document_pointer": "#/paths/~1customers/post/responses/201",
+        "summary": "A baseline required property is absent or optional in the revision schema."
+      }
+    ]
+  },
+  {
+    "id": "CHANGE-11D218B3394E",
+    "category": "response_required_property_removed",
+    "severity": "high",
+    "breaking": true,
+    "path": "/customers",
+    "method": "post",
+    "location": "response.201",
+    "old_value": {"name": "status", "required": true, "type": "string"},
+    "new_value": null,
+    "description": "Response property 'status' is no longer guaranteed for status '201' on POST /customers.",
+    "evidence": [
+      {
+        "old_document_pointer": "#/paths/~1customers~1create/post/responses/201",
+        "new_document_pointer": "#/paths/~1customers/post/responses/201",
+        "summary": "A baseline required property is absent or optional in the revision schema."
+      }
+    ]
+  },
+  {
+    "id": "CHANGE-9AA295410985",
+    "category": "security_scheme_removed",
+    "severity": "high",
+    "breaking": true,
+    "path": null,
+    "method": null,
+    "location": "components.securitySchemes",
+    "old_value": {"name": "ApiKeyAuth", "type": "apiKey", "in": "header"},
+    "new_value": null,
+    "description": "Security scheme 'ApiKeyAuth' was removed.",
+    "evidence": [
+      {
+        "old_document_pointer": "#/components/securitySchemes/ApiKeyAuth",
+        "new_document_pointer": null,
+        "summary": "The named scheme exists in baseline components and not in revision components."
+      }
+    ]
+  },
+  {
+    "id": "CHANGE-6F58DBDC2EFB",
+    "category": "security_requirement_added",
+    "severity": "high",
+    "breaking": true,
+    "path": "/customers",
+    "method": "post",
+    "location": "security.requirement",
+    "old_value": [{"ApiKeyAuth": []}],
+    "new_value": [{"BearerAuth": []}],
+    "description": "Security requirements were added or tightened for POST /customers.",
+    "evidence": [
+      {
+        "old_document_pointer": "#/security",
+        "new_document_pointer": "#/security",
+        "summary": "The effective canonical requirement alternatives differ and the revision does not permit anonymous access."
+      }
+    ]
+  }
+]
