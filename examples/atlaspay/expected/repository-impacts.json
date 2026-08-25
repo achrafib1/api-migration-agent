@@ -1,0 +1,67 @@
+{
+  "impact_count": 29,
+  "affected_files": [
+    "src/atlaspay_client/auth.py",
+    "src/atlaspay_client/client.py",
+    "src/atlaspay_client/models.py",
+    "src/atlaspay_client/service.py",
+    "tests/fixtures.py",
+    "tests/test_client.py"
+  ],
+  "matches_by_change": {
+    "CHANGE-11D218B3394E": {
+      "matched_text": "status",
+      "locations": {
+        "src/atlaspay_client/models.py": [24],
+        "tests/fixtures.py": [13],
+        "tests/test_client.py": [40]
+      }
+    },
+    "CHANGE-145CBCB1A6BA": {
+      "matched_text": "/customers/create",
+      "locations": {
+        "src/atlaspay_client/client.py": [38],
+        "tests/test_client.py": [18]
+      }
+    },
+    "CHANGE-9AA295410985": {
+      "matched_text": "ApiKeyAuth",
+      "locations": {
+        "src/atlaspay_client/auth.py": [9, 16, 17]
+      }
+    },
+    "CHANGE-BD43CDEDDD34": {
+      "matched_text": "customer_name",
+      "locations": {
+        "src/atlaspay_client/client.py": [40],
+        "src/atlaspay_client/models.py": [13, 23],
+        "src/atlaspay_client/service.py": [17, 20],
+        "tests/fixtures.py": [6, 12],
+        "tests/test_client.py": [20, 34]
+      }
+    },
+    "CHANGE-DBFD5EAA004A": {
+      "matched_text": "customer_id",
+      "locations": {
+        "src/atlaspay_client/models.py": [22],
+        "tests/fixtures.py": [11],
+        "tests/test_client.py": [39]
+      }
+    },
+    "CHANGE-E57D5721FF94": {
+      "matched_text": "customer_name",
+      "locations": {
+        "src/atlaspay_client/client.py": [40],
+        "src/atlaspay_client/models.py": [13, 23],
+        "src/atlaspay_client/service.py": [17, 20],
+        "tests/fixtures.py": [6, 12],
+        "tests/test_client.py": [20, 34]
+      }
+    }
+  },
+  "unresolved_change_ids": [
+    "CHANGE-0098C9B967F0",
+    "CHANGE-4B2C54D479A4",
+    "CHANGE-6F58DBDC2EFB"
+  ]
+}
